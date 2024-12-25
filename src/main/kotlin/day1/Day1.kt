@@ -3,6 +3,7 @@ package io.github.arnabkaycee.day1
 import java.net.URL
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.util.PriorityQueue
 import kotlin.math.abs
 import kotlin.streams.asSequence
@@ -41,7 +42,7 @@ fun findSimilarityScore(lines: Sequence<String>): Long {
 }
 
 fun main() {
-    val path = Path.of(System.getProperty("file"))
+    val path = Paths.get(System.getProperty("file"))
     println("Total Distance " + findTotalDistance(Files.lines(path).asSequence()))
     println("Total similarity score "+ findSimilarityScore(Files.lines(path).asSequence()))
 }
